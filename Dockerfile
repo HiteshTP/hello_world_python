@@ -1,4 +1,4 @@
-FROM python:3-alpine
+FROM python:3
 
 WORKDIR /usr/src/app
 
@@ -6,7 +6,7 @@ COPY requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
-
-ENTRYPOINT [ "python3", "app.py" ]
-
 EXPOSE 9000
+CMD [ "python3", "./app.py" ]
+
+
